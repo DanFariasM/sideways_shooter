@@ -3,11 +3,11 @@ from time import sleep
 
 import pygame
 
-from ex_13_6_settings import Settings
-from ex_13_6_game_stats import GameStats
-from ex_13_6_ship import Ship
-from ex_13_6_bullet import Bullet
-from ex_13_6_alien import Alien
+from settings import Settings
+from game_stats import GameStats
+from ship import Ship
+from bullet import Bullet
+from alien import Alien
 
 class SidewaysShooter:
     """Overall class to manage game assets and behavior."""
