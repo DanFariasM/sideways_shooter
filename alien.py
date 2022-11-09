@@ -31,5 +31,5 @@ class Alien(Sprite):
         """Return True if an alien is at the edge of the screen."""
         screen_rect = self.screen.get_rect()
 
-        if self.rect.bottom >= screen_rect.bottom or self.rect.top <= 0:
+        if self.rect.bottom >= screen_rect.bottom or self.rect.top <= 100:
             return True
