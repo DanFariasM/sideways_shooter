@@ -7,6 +7,7 @@ class Alien(Sprite):
     def __init__(self, ss_game):
         """Initialize the alien and set its starting position."""
         super().__init__()
+        self.ss_game = ss_game
         self.screen = ss_game.screen
         self.settings = ss_game.settings
 
@@ -31,5 +32,6 @@ class Alien(Sprite):
         """Return True if an alien is at the edge of the screen."""
         screen_rect = self.screen.get_rect()
 
-        if self.rect.bottom >= screen_rect.bottom or self.rect.top <= 100:
+        if self.rect.bottom >= screen_rect.bottom or self.rect.top <= (
+                        self.ss_game.sb.level_rect.bottom + 10):
             return True

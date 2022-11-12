@@ -7,6 +7,7 @@ class Ship(Sprite):
     def __init__(self, ss_game):
         """Initialize the ship and set its starting position."""
         super().__init__()
+        self.ss_game = ss_game
         self.screen = ss_game.screen
         self.settings = ss_game.settings
         self.screen_rect = ss_game.screen.get_rect()
@@ -30,7 +31,8 @@ class Ship(Sprite):
         # Update the ship's y value, not the rect.
         if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
             self.y += self.settings.ship_speed
-        if self.moving_up and self.rect.top > 100:
+        if self.moving_up and self.rect.top > (
+                    self.ss_game.sb.level_rect.bottom + 10):
             self.y -= self.settings.ship_speed
 
         # Update rect object from self.y
